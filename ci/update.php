@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!----- Address ---------------------------------------------------------->
 <tr>
 <td>ADDRESS <br /><br /><br /></td>
-<td><textarea name="address" id="address" value="<?php echo set_value('address',$post->address);?>" rows="4" cols="30"></textarea>
+<td><textarea name="address" id="address"  rows="4" cols="30"><?php echo set_value('address',$post->address);?></textarea>
 </td>
 </tr>
 
@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <tr>
 <td>Dvision:</td>
 <td><select name="division" id="division" >
-<option value="" selected> select an option</option>
+<option value=<?php echo $post->id;?>> <?php echo $post->division_name;?> </option>
  <?php if(count($division)): ?>
 			<?php foreach($division as $divi): ?>
 			<option value="<?php echo $divi['id'];?>"><?php echo $divi['division_name'];?> </option>
@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <tr>
 <td>District:</td>
 <td><select name="district" id="district"  >
-<option value="" selected> select an option</option>
+<option value=<?php echo $post->id;?>><?php echo $post->district_name;?> </option>
 
 </select>
 </td>
@@ -81,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <tr>
 <td>Upozila:</td>
 <td><select name="upozila" id="upozila"  >
-<option value="" selected> select an option</option>
+<option value=<?php echo $post->id;?>> <?php echo $post->upozila_name;?></option>
 
 </select>
 </td>
@@ -94,10 +94,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  
 <td class="language">
 English
-<input type="checkbox" name="language" id="language">
+<input type="checkbox" name="language" id="language" >
 
 Bangla
-<input type="checkbox" name="language" id="language">
+<input type="checkbox" name="language" id="language" >
 </td>
 </tr>
 
@@ -119,21 +119,21 @@ Bangla
 
 <td align="center">SSC</td>
 <td><select name="sscversity" id="sscversity" required >
-<option value="0" selected> select an option</option>
+<option value=<?php echo $post->id;?>><?php echo $post->sscversity;?> </option>
 <option value="DCC">DCC</option>
 <option value="UIU">UIU</option>
 <option value="MIST">MIST</option>
 </select></td>
 
 <td><select name="sscboard" id="sscboard" required >
-<option value="0" selected> select an option</option>
+<option value= <?php echo $post->id;?>> <?php echo $post->sscboard;?></option>
 <option value="Dhaka">Dhaka</option>
 <option value="comilla">comilla</option>
 <option value="CTG">CTG</option>
 </select></td>
 
 <td><select name="sscresult" id="sscresult" required >
-<option value="0" selected> select an option</option>
+<option value=<?php echo $post->id;?>> <?php echo $post->sscresult;?></option>
 <option value="4.00">4.00</option>
 <option value="3.00">3.00</option>
 <option value="2.00">2.00</option>
@@ -144,21 +144,21 @@ Bangla
 
 <td align="center">HSC</td>
 <td><select name="hscversity" id="hscversity" required="required">
-<option value="0" selected> select an option</option>
+<option value=<?php echo $post->id;?>> <?php echo $post->hscversity;?></option>
 <option value="DCC">DCC</option>
 <option value="UIU">UIU</option>
 <option value="MIST">MIST</option>
 </select></td>
 
 <td><select name="hscboard" id="hscboard" required="required" >
-<option value="0" selected> select an option</option>
+<option value=<?php echo $post->id;?>> <?php echo $post->hscboard;?></option>
 <option value="Dhaka">Dhaka</option>
 <option value="comilla">comilla</option>
 <option value="CTG">CTG</option>
 </select></td>
 
 <td><select name="hscresult" id="hscresult" required ="required">
-<option value="0" selected> select an option</option>
+<option value=<?php echo $post->id;?>> <?php echo $post->hscresult;?></option>
 <option value="4.00">4.00</option>
 <option value="3.00">3.00</option>
 <option value="2.00">2.00</option>
@@ -169,21 +169,21 @@ Bangla
 
 <td align="center">Graduation</td>
 <td><select name="gdversity" id="gdversity" required="required">
-<option value="0" selected> select an option</option>
+<option value=<?php echo $post->id;?>> <?php echo $post->gdversity;?></option>
 <option value="DCC">DCC</option>
 <option value="UIU">UIU</option>
 <option value="MIST">MIST</option>
 </select></td>
 
 <td><select name="gdboard" id="gdboard" required="required">
-<option value="0" selected> select an option</option>
+<option value=<?php echo $post->id;?>> <?php echo $post->gdboard;?></option>
 <option value="Dhaka">Dhaka</option>
 <option value="comilla">comilla</option>
 <option value="CTG">CTG</option>
 </select></td>
 
 <td><select name="gdresult" id="gdresult" required="required">
-<option value="0" selected> select an option</option>
+<option value=<?php echo $post->id;?>> <?php echo $post->gdresult;?></option>
 <option value="4.00">4.00</option>
 <option value="3.00">3.00</option>
 <option value="2.00">2.00</option>
@@ -194,21 +194,21 @@ Bangla
 
 <td align="center">Masters</td>
 <td><select name="msversity" id="msversity" required="required">
-<option value="0" selected> select an option</option>
+<option value=<?php echo $post->id;?>> <?php echo $post->msversity;?></option>
 <option value="DCC">DCC</option>
 <option value="UIU">UIU</option>
 <option value="MIST">MIST</option>
 </select></td>
 
 <td><select name="msboard" id="msboard" required="">
-<option value="0" selected> select an option</option>
+<option value=<?php echo $post->id;?>> <?php echo $post->msboard;?></option>
 <option value="Dhaka">Dhaka</option>
 <option value="Comilla">Comilla</option>
 <option value="CTG">CTG</option>
 </select></td>
 
 <td><select name="msresult" id="msresult" required="required">
-<option value="0" selected> select an option</option>
+<option value=<?php echo $post->id;?>> <?php echo $post->msresult;?></option>
 <option value="4.00">4.00</option>
 <option value="3.00">3.00</option>
 <option value="2.00">2.00</option>
@@ -224,13 +224,13 @@ Bangla
 
 <tr>
 <td>PHOTO:</td>
-<td><input type="file" name="image" id="image" value="" width="23" height="23"></td>
+<td><input type="file" name="image" id="image" width="23" height="23" >  </td>
 </tr>
 
 <!----- Cv ---------------------------------------------------------->
 <tr>
 <td>CV:</td>
-<td><input type="file" name="file" id="file"></td>
+<td><input type="file" name="file" id="file" > </td>
 </tr>
 
 <!----- Training ---------------------------------------------------------->
